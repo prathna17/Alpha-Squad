@@ -217,7 +217,7 @@ body {
 :is(.h1, .h2) .has-before { display: inline-block; }
 
 :is(.h1, .h2) .has-before::before {
-  bottom: 8px;
+  bottom: 4px;
   left: 0;
   width: 100%;
   height: 6px;
@@ -308,9 +308,14 @@ body {
 
 .text-center { text-align: center; }
 
-.section-title { margin-block: 30px 50px; }
+.section-title { margin-block: 100px 100px; }
 
 .grid-list {
+  display: grid;
+  gap: 30px;
+}
+
+.grid-list-special{
   display: grid;
   gap: 30px;
 }
@@ -522,7 +527,7 @@ body {
 
 .service { background-color: var(--ghost-white); }
 
-.service .section-title { margin-block: 30px 60px; }
+.service .section-title { margin-block: 30px 40px; }
 
 .service-card,
 .service .link-card {
@@ -592,7 +597,7 @@ body {
 .feature .container,
 .feature-list {
   display: grid;
-  gap: 60px;
+  gap: 70%;
 }
 
 .feature-card .card-icon {
@@ -613,7 +618,7 @@ body {
 .feature-card .card-text {
   color: var(--cool-gray);
   font-size: var(--fs-7);
-  margin-block-start: 10px;
+  margin-block-start: 20px;
 }
 
 .feature-card:is(:hover, :focus) .card-icon {
@@ -912,6 +917,31 @@ body {
   transition: var(--transition-1);
 }
 
+.special{
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+.mySlides {display: none;}
+
+img {vertical-align: middle;}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.vivo{
+  color: rgb(94, 94, 233);
+  font-size: 25px;
+}
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
 .insta-card:is(:hover, :focus-within) .card-content { opacity: 1; }
 
 .footer-bottom {
@@ -1068,7 +1098,7 @@ body {
 
   .grid-list { grid-template-columns: 1fr 1fr; }
 
-
+  .grid-list-special{grid-template-columns: 1fr 1fr;}
 
   /**
    * HERO
@@ -1125,7 +1155,7 @@ body {
 
   .feature-card .card-icon { margin-block-end: 0; }
 
-  .feature-card .card-text { max-width: 32ch; }
+  /*.feature-card .card-text { max-width: 32ch; }*/
 
 
 
@@ -1135,7 +1165,60 @@ body {
 
   .project .grid-list > li:first-child { grid-column: 1 / 3; }
 
+  .customAccordion .accordion {
+    background-color: #428bca;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    font-weight: 500;
+    border-radius: 7px;
+}
 
+.customAccordion .active,
+.customAccordion .accordion:hover {
+    background-color: #428bca;
+}
+
+.customAccordion .accordion:after {
+    content: '\002B';
+    color: white;
+    transform: scale(2);
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.customAccordion .active:after {
+    content: "\2212";
+}
+
+.customAccordion .panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    border-left-style: none;
+    border-left-width: 1px;
+    border-left-color: #428bca;
+    border-right-style: none;
+    border-right-width: 1px;
+    border-right-color: #428bca;
+    border-bottom-style: none;
+    border-bottom-width: 1px;
+    border-bottom-color: #428bca;
+}
+
+.paddingY {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 
   /**
    * NEWSLETTER
@@ -1208,7 +1291,7 @@ body {
   .grid-list { grid-template-columns: repeat(3, 1fr); }
 
 
-
+  .grid-list-special { grid-template-columns: repeat(3, 1fr); }
   /**
    * HEADER
    */
@@ -1270,7 +1353,7 @@ body {
     background-image: linear-gradient(to right, var(--white) 79%, var(--mustard) 79%);
     overflow: hidden;
   }
-
+  
   .hero .container {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
@@ -1283,12 +1366,97 @@ body {
 
   .hero-banner { margin-inline-end: -140px; }
 
+.btn-investor{
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
 
+.btn-investor:hover {
+  background-color: RoyalBlue;
+}
 
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.investor-special{
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-auto-rows: 60%;
+}
+
+.investor-first-row{
+  display: grid;
+  grid-template-rows: 48% 26% 33% 33% 35%;
+}
+
+.investor-second-row{
+  display: grid;
+  grid-template-rows: 48% 26% 33% 33% 35%;
+}
+
+.heading{
+  background: linear-gradient(to right,#04a7a9, #00d4ff);
+  padding: 5px 55px;
+  border-radius: 20px;
+  color: white;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
   /**
    * FEATURE
    */
+   .auto-slider{
+    position: relative;
+    box-sizing: content-box;
+    display: inline-block;
+    padding: 10px 10px 20px;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    align-content: center;
+    width: 100%;
+    transition: all 0.5s ease;
+ 
+}
 
+
+div#slider { overflow: hidden; }
+div#slider figure img { width: 20%; float: left;height:100px;width: auto}
+div#slider figure { 
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  animation: 45s sliding ease infinite; 
+}
+
+/* Slider indicator */
+.indicator{
+    width: 100%;
+    max-width: 720px;
+    height: 6px;
+    background: #2AF598;
+    position: absolute;
+    bottom: 0;
+    
+    animation: indicating 9s ease infinite; 
+    
+}
   .feature .container {
     grid-template-columns: 1fr 1fr;
     gap: 30px;
@@ -1456,6 +1624,7 @@ body {
    */
 
   .service .grid-list { grid-template-columns: repeat(4, 1fr); }
+  .grid-list-special{ grid-template-columns: repeat(3, 1fr); }
 
   .service-card .h3 { --fs-3: 2rem; }
 
@@ -1490,3 +1659,12 @@ body {
   .blog-card .card-title { --fs-4: 2.4rem; }
 
 }
+
+@keyframes sliding{
+  0%{left: 0%; }
+  20%{left: -100%;}
+  40%{left: -200%;}
+  60%{left: -300%;}
+  80%{left: -400%;}
+  100%{left: 0%;}
+} 
